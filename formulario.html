@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="gl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulario da Tarefa 1.1</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background-color: #f0f0f0;
+      }
+
+      form {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        max-width: 400px;
+        margin: auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+
+      input[type='text'] {
+        width: 100%;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #007acc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #005fa3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Formulario da Tarefa 1.1.</h1>
+
+    <form
+      method="POST"
+      action="https://webhook.site/704c8495-c796-44e0-9d1f-b6aa09d156b4"
+    >
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="apelido">Apelido:</label>
+      <input type="text" id="apelido" name="apelido" required />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

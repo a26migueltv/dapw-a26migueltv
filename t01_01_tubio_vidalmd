@@ -1,0 +1,88 @@
+# T01.01 Peticións e respostas HTTP
+
+## Exercicio 1
+
+### Captura 1 – Cabeceira da petición HTTP (raw)
+
+![image-20260929120453493](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929120453493.png)
+
+- **Protocolo HTTP:** HTTP/2
+- **Método:** GET
+- **Path:** `/oferta-educativa/`
+- **Host:** `www.iessanclemente.net`
+
+| Cookie              | Valor                                           |
+| ------------------- | ----------------------------------------------- |
+| `gp-cookies-closed` | `1`                                             |
+| `gp-cookies-groups` | `gp-cookies-analiticas,`                        |
+| `_ga_VW92XST9HQ`    | `GS2.1.s1790674570$o1$g1$t1790674676$j60$l0$h0` |
+| `_ga`               | `GA1.1.764221971.1790674571`                    |
+
+### Captura 2 – Cabeceira da resposta HTTP (raw)
+
+![image-20260929120509286](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929120509286.png)
+
+- **Código de resposta:** 200 (OK)
+- **Servidor web:** nginx
+- **Tipo MIME:** `text/html`
+
+### Captura 3 – Corpo da resposta
+
+![image-20260929120746158](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929120746158.png)
+
+### Captura 2 – Cabeceira da resposta HTTP (raw)
+
+![image-20260929120509286](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929120509286.png)
+
+- **Código de resposta:** 200 (OK)
+- **Servidor web:** nginx
+- **Tipo MIME:** `text/html`
+
+### Captura 3 – Corpo da resposta
+
+![image-20260929120746158](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929120746158.png)
+
+### Captura 4 – Cabeceira da petición dunha imaxe (raw)
+
+![image-20260929121756055](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929121756055.png)
+
+- **Protocolo HTTP:** HTTP/2
+- **Método:** GET
+- **Path:** `/wp-content/themes/sclemente/img/favicon.png`
+- **Host:** `www.iessanclemente.net`
+
+### Captura 5 – Cabeceira da resposta dunha imaxe (raw)
+
+![image-20260929122035589](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929122035589.png)
+
+- \- **Código de resposta:** 200 (OK) 
+- **Servidor web:** nginx 
+- **Tipo MIME:** `image/png`
+
+### Captura 6 – Minimización de JavaScript
+
+![image-20260929122703287](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929122703287.png)
+
+## Exercicio 2
+
+### Captura 1 – Cabeceira da petición do formulario (raw)
+
+![image-20260929123408245](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929123408245.png)
+
+- **Método:** POST
+- **Tipo MIME e significado:** `application/x-www-form-urlencoded`. Indica que os datos do formulario se envían no corpo da petición codificados como nunha URL: pares `nome=valor` separados por `&`, cos espazos e caracteres especiais codificados. É o tipo por defecto dun formulario HTML cando non se indica `enctype`.
+- **Tamaño do corpo:** 25 bytes (cabeceira `Content-Length: 25`)
+
+### Captura 2 – Contido do formulario
+
+![image-20260929123525621](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929123525621.png)
+
+### Captura 3 – Resposta HTTP do formulario
+
+![image-20260929123709231](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929123709231.png)
+
+- **Tipo MIME da resposta:** `text/html` 
+
+### Captura 4 – Datos en webhook.site
+
+![image-20260929123808503](/home/sanclemente.local/a26migueltv/.config/Typora/typora-user-images/image-20260929123808503.png)
