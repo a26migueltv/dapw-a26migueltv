@@ -1,0 +1,80 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/bookworm64"
+
+  maquinas = [
+    { vb_name: "dev-mtv-1", hostname: "devmtv1", ip: "192.168.56.101" },
+    { vb_name: "dev-mtv-2", hostname: "devmtv2", ip: "192.168.56.102" },
+    { vb_name: "dbdev-mtv", hostname: "dbdevmtv", ip: "192.168.56.103" },
+    { vb_name: "runner-mtv", hostname: "runnermtv", ip: "192.168.56.104" }
+  ]
+
+  maquinas.each do |m|
+    config.vm.define m[:hostname] do |node|
+      node.vm.hostname = m[:hostname]
+
+      # Host-only network
+      node.vm.network "private_network", ip: m[:ip]
+
+      node.vm.provider "virtualbox" do |vb|
+        vb.name = m[:vb_name]
+        vb.memory = 1024
+        vb.cpus = 1
+      end
+
+      node.vm.provision "shell", inline: <<-SHELL
+        apt-get update
+        apt-get install -y sudo openssh-server git
+
+        # Crear usuario dadmin se non existe
+        if ! id dadmin >/dev/null 2>&1; then
+          useradd -m -s /bin/bash dadmin
+          echo "dadmin:abc123." | chpasswd
+        fi
+
+        # Engadir a sudo
+        usermod -aG sudo dadmin
+
+        # Permitir que se poida conectar mediante contrasinal
+        sed -i 's/^#PasswordAuthentication no/PasswordAuthentication yes/; s/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+
+        # Sudo sen contrasinal
+        echo "dadmin ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/dadmin
+        chmod 440 /etc/sudoers.d/dadmin
+
+        # Activar SSH
+        systemctl enable ssh
+        systemctl restart ssh
+      SHELL
+
+      # Provisión adicional só para a máquina do runner: instalar Docker
+      if m[:hostname] == "runner"
+        node.vm.provision "shell", inline: <<-SHELL
+          # Instalar dependencias necesarias
+          apt-get update
+          apt-get install -y ca-certificates curl gnupg
+
+          # Engadir a clave GPG oficial de Docker
+          install -m 0755 -d /etc/apt/keyrings
+          curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+          chmod a+r /etc/apt/keyrings/docker.asc
+
+          # Engadir o repositorio de Docker
+          echo \
+            "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+            $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+          # Instalar Docker Engine
+          apt-get update
+          apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+          # Engadir o usuario dadmin ao grupo docker (para non necesitar sudo)
+          usermod -aG docker dadmin
+
+          # Activar e arrincar Docker
+          systemctl enable docker
+          systemctl restart docker
+        SHELL
+      end
+    end
+  end
+end
