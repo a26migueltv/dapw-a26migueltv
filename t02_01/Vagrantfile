@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
       SHELL
 
       # Provisión adicional só para a máquina do runner: instalar Docker
-      if m[:hostname] == "runner"
+      if m[:hostname].start_with?("runner")
         node.vm.provision "shell", inline: <<-SHELL
           # Instalar dependencias necesarias
           apt-get update
