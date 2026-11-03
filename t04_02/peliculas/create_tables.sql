@@ -1,0 +1,6 @@
+-- Crear a táboa de películas
+CREATE TABLE IF NOT EXISTS peliculas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
