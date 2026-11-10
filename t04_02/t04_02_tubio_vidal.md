@@ -52,19 +52,19 @@
 
 - Captura 1 - Táboas creadas en PHPMyAdmin (paso 7).
 
-![Captura 1](img/ex4-captura1.png)
+![image-20261110120401258](img/image-20261110120401258.png)
 
 &nbsp;
 
 - Captura 2 - Contido do ficheiro `.env` (paso 10).
 
-![Captura 2](img/ex4-captura2.png)
+![image-20261110120513912](img/image-20261110120513912.png)
 
 &nbsp;
 
 - Captura 3 - Contido da táboa `peliculas` dende PHPMyAdmin (paso 11).
 
-![Captura 3](img/ex4-captura3.png)
+![image-20261110120652158](img/image-20261110120652158.png)
 
 &nbsp;
 
@@ -76,12 +76,10 @@
 
 - Captura 1 - Ficheiro de definición do `virtualhost` co bloque `Files` (paso 2).
 
-![Captura 1](img/ex5-captura1.png)
+![image-20261110121153463](img/image-20261110121153463.png)
 
 &nbsp;
 
 - Captura 2 - Navegador coa URL `http://peliculas.192-168-56-141.nip.io/.env`, onde se vexa que o acceso está denegado (paso 4).
 
-![Captura 2](img/ex5-captura2.png)
-
-&nbsp;
+![image-20261110121256067](img/image-20261110121256067.png)
