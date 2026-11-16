@@ -14,43 +14,33 @@
 
 - Captura 3 - Contido da táboa `migrations` dende o cliente de VSC (paso 19).
 
-![Captura 3](img/ex1-captura3.png)
-
-&nbsp;
+![image-20261116104952698](img/image-20261116104952698.png)&nbsp;
 
 - Captura 4 - Comprobación con `ls -la` de que tódolos ficheiros, incluídos os ocultos, están en `/var/www/laravel` (paso 23).
 
-![Captura 4](img/ex1-captura4.png)
-
-&nbsp;
+![image-20261116105237922](img/image-20261116105237922.png)&nbsp;
 
 - Captura 5 - Ficheiro de definición do `virtualhost` `api.conf` (paso 25).
 
-![Captura 5](img/ex1-captura5.png)
-
-&nbsp;
+![image-20261116105653732](img/image-20261116105653732.png)&nbsp;
 
 - Captura 6 - Páxina principal de Laravel en funcionamento (paso 28).
 
-![Captura 6](img/ex1-captura6.png)
-
-&nbsp;
+![image-20261116105807726](img/image-20261116105807726.png)&nbsp;
 
 - Captura 7 - Resposta do navegador en `http://api.192-168-56-141.nip.io/api/libros` tras activar `mod_rewrite` e `AllowOverride All` (paso 33).
 
-![Captura 7](img/ex1-captura7.png)
-
-&nbsp;
+![image-20261116110136255](img/image-20261116110136255.png)&nbsp;
 
 - Captura 8 - Execución e saída do comando `cURL` para crear un libro (paso 34).
 
-![Captura 8](img/ex1-captura8.png)
+![image-20261116110422999](img/image-20261116110422999.png)
 
 &nbsp;
 
 - Captura 9 - Execución e saída do comando `cURL` para ver tódolos libros (paso 35).
 
-![Captura 9](img/ex1-captura9.png)
+![image-20261116110458406](img/image-20261116110458406.png)
 
 &nbsp;
 
@@ -62,12 +52,8 @@
 
 - Captura 1 - Execución e saída do comando `cURL` para crear un disco (paso 12).
 
-![Captura 1](img/ex2-captura1.png)
-
-&nbsp;
+![image-20261116111124833](img/image-20261116111124833.png)&nbsp;
 
 - Captura 2 - Execución e saída do comando `cURL` para ver tódolos discos (paso 13).
 
-![Captura 2](img/ex2-captura2.png)
-
-&nbsp;
+![image-20261116111237028](img/image-20261116111237028.png)&nbsp;
